@@ -27,7 +27,7 @@ cd server/ && yarn install
 ```shell
 yarn watch
 ```
-* You need to configure assets entries that you are watching **in server/encoreHar.js**
+* You need to configure assets entries that you are watching in **server/encoreHar.js**
 ```javascript
 
 ...
@@ -41,6 +41,9 @@ let transpiledEntries = [
 
 
 ```
+
+* You need to edit your webpack.config.js file, located in your project homefolder. A sample file of webpack.config.js is included in **server/** folder
+
 
 * Launch encoreHotAssetReloader. By default, it is running on port 8081
 ```shell
