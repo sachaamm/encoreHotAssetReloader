@@ -11,9 +11,10 @@ OR
 symfony new --full my_project 
 ```
 
-* First of all, installing webpack encore is required. 
+* First of all, installing webpack encore is required. ( [From the documentation](https://symfony.com/doc/current/frontend/encore/installation.html) )
 ```shell
-composer require encore
+composer require symfony/webpack-encore-bundle
+yarn install
 ```
 * Install the package via composer
 ```shell
