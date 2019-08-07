@@ -46,7 +46,7 @@ let transpiledEntries = [
 ```shell
 cd server/ && node encoreHar.js 
 ```
-* This is how looks like my base.html.twig file. I followed instructions for setting up webpack encore [from here}(https://symfony.com/doc/current/frontend/encore/simple-example.html)
+* This is how looks like my base.html.twig file. I followed instructions for setting up webpack encore [from here](https://symfony.com/doc/current/frontend/encore/simple-example.html). Notice that Jquery is required for Encore HAR
 
 ```twig
 
