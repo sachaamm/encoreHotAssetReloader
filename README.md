@@ -23,7 +23,7 @@ composer require sachaamm/encoreHotAssetReloader
 ```shell
 cd server/ && yarn install 
 ```
-* Launch webpack encore in watch mode ( at the home folder of your project )
+* Launch webpack encore in watch mode ( at the ⌂ home folder of your project )
 ```shell
 yarn watch
 ```
@@ -42,7 +42,7 @@ let transpiledEntries = [
 
 ```
 
-* You need to edit your **webpack.config.js** file, located in your project homefolder. A ready-to-use sample config of is included in **server/webpack.sample.config.js** folder. Replace **./webpack.config.js** content by **./server/webpack.sample.config.js** content
+* You need to edit your **webpack.config.js** file, located in your project ⌂ home folder. A ready-to-use sample config of is included in **server/webpack.sample.config.js** folder. Replace **./webpack.config.js** content by **./server/webpack.sample.config.js** content
 
 
 * Launch encoreHotAssetReloader. By default, it is running on port 8081
@@ -84,7 +84,7 @@ cd server/ && node encoreHar.js
 
 ```
 
-* Launch symfony Web server ( at the home folder of your project )
+* Launch symfony Web server ( at the ⌂ home folder of your project )
 ```shell
 php bin/console server:run
 ```
