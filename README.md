@@ -42,11 +42,44 @@ let transpiledEntries = [
 
 ```
 
-* Launch encoreHotAssetReloader
+* Launch encoreHotAssetReloader. By default, it is running on port 8081
 ```shell
 cd server/ && node encoreHar.js 
 ```
+* This is how looks like my base.html.twig file. I followed instructions for setting up webpack encore [from here}(https://symfony.com/doc/current/frontend/encore/simple-example.html)
 
+```twig
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}Welcome!
+            {% endblock %}
+        </title>
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+    </head>
+    <body>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+        {% block body %}
+
+          <script src="/encoreHAR/encoreHARJquery/jquery-2.2.4.min.js"  ></script>
+          
+        {% endblock %}
+
+    </body>
+</html>
+
+```
 
 
 
