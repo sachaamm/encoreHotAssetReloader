@@ -23,7 +23,7 @@ composer require sachaamm/encoreHotAssetReloader
 ```shell
 cd server/ && yarn install 
 ```
-* Launch webpack encore in watch mode ( at the home folder of your app )
+* Launch webpack encore in watch mode ( at the home folder of your project )
 ```shell
 yarn watch
 ```
@@ -81,8 +81,27 @@ cd server/ && node encoreHar.js
 
 ```
 
+* Launch symfony Web server ( at the home folder of your project )
+```shell
+php bin/console server:run
+```
 
+* Now, go to http://localhost:8000/encore/hot/asset/reloader/example and you will get a hot reload example.
+You can try to edit /assets/app.css or /assets/app.js file to see the hot reload process.
+The hot reload process is happening by including "ehar/ehar.html.twig"
 
+```twig
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HelloController!
+{% endblock %}
+
+{% block body %}
+
+    {% include "ehar/ehar.html.twig" %} {# Use this include to add the asset hot reloading in your templates ! #}
+    
+```
 
 
 
