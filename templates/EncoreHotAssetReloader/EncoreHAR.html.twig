@@ -1,0 +1,86 @@
+
+<script src="/encoreHAR/encoreHARSocket/socket.io.dev.js"></script>
+
+
+<script>
+    var socket = io.connect('http://localhost:8081');
+    let timeout = 500;
+
+    socket.on('message', function (message) {
+
+        let messageFromServer = message.message;
+
+        switch(messageFromServer){
+            case "hello" : 
+                console.log("...۝♦♦♦  Connected to Encore Hot Asset Reloader ♦♦♦۝ ..."); // https://seafightpkp.jimdo.com/caract%C3%A8res-sp%C3%A9ciaux/
+            break;
+
+            case "reload":
+           
+                let mustReloadJs = false;
+                let mustReloadCss = false;
+
+                let scriptsToReload = [];
+
+                for(let i = 0; i < message.content.length ; i++){
+
+                    let fileToReload = message.content[i];
+                    let lastIndex = fileToReload.lastIndexOf(".");
+                    let fileType = fileToReload.substring(lastIndex,fileToReload.length)
+
+                    if(fileType == ".js") { 
+                        mustReloadJs = true;
+                        scriptsToReload.push(fileToReload);
+                    }
+
+                    if(fileType == ".css") mustReloadCss = true;                
+                  
+                }
+
+                if(mustReloadJs)reload_js(scriptsToReload) // actually reloading js is not working, probably because runtime.js is not reloaded ?
+                if(mustReloadCss)reloadStylesheets();
+
+                socket.emit('release_reloaded', message.content);
+
+            break;
+        }
+    
+        if (typeof(message) === 'string') {} else {
+
+            for (let i = 0; i < message.length; i++) {
+                console.log(message[i]);
+            }
+            
+        }
+
+        if (message.length > 0) {
+            reloadStylesheets();
+        }
+    })
+
+    socketLoop();
+
+    function socketLoop() {
+        socket.emit('message', 'ask_assets_to_reload');
+        setTimeout(() => {
+            socketLoop();
+        }, timeout);
+    }
+
+    function reloadStylesheets() {
+        var queryString = '?reload=' + new Date().getTime();
+        $('link[rel="stylesheet"]').each(function () {
+            this.href = this.href.replace(/\?.*|$/, queryString);
+        });
+    }
+
+    function reload_js(filePaths) {
+
+        for(let i = 0 ; i < filePaths.length ; i++){
+            $.getScript("/build" + filePaths[i]);
+        }
+
+        
+        
+    }
+</script>

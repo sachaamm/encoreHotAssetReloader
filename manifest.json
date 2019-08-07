@@ -1,0 +1,14 @@
+{
+    "copy-from-recipe": {
+        "public": "%PUBLIC_DIR%",
+        "templates/": "%TEMPLATES_DIR%/",
+        "server/": "%SERVER_DIR"
+    },
+
+    "extra": {
+        "templates-dir/": "templates/",
+        "server-dir/": "server/"
+    }
+
+
+}
