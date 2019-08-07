@@ -27,7 +27,7 @@ cd server/ && yarn install
 ```shell
 yarn watch
 ```
-* You need to configure assets entries your watching **in server/encoreHar.js**
+* You need to configure assets entries that you are watching **in server/encoreHar.js**
 ```javascript
 
 ...
