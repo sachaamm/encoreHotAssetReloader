@@ -86,7 +86,7 @@ cd server/ && node encoreHar.js
 php bin/console server:run
 ```
 
-* Now, go to http://localhost:8000/encore/hot/asset/reloader/example and you will get a hot reload example.
+* Now, go to http://localhost:8000/encore/hot/asset/reloader/example and you will get an asset hot reload example.
 You can try to edit /assets/app.css or /assets/app.js file to see the hot reload process.
 The hot reload process is happening by including "ehar/ehar.html.twig"
 
