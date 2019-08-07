@@ -16,19 +16,19 @@ cd server/ && yarn install
 ```
 * Launch webpack encore in watch mode ( at the home folder of your app )
 ```shell
-yarn install
+yarn watch
 ```
 * You need to configure assets entries your watching **in server/encoreHar.js**
 ```javascript
 
-......
+...
 // Define your assets entries. It relies on your webpack config. I just left the default app.js & app.css files for simplification purposes
 let transpiledEntries = [ 
     { entry:"/assets/js/app.js" , transpiled:"/app.js" },
     { entry:"/assets/css/app.css" , transpiled:"/app.css" }
 ];
 
-......
+...
 
 
 ```
