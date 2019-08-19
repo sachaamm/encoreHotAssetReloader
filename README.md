@@ -107,5 +107,5 @@ The hot reload process is happening by including "ehar/ehar.html.twig"
     
 ```
 
-
+TODO : Install without Encore 
 
